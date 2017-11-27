@@ -22,7 +22,7 @@ import javax.swing.ListSelectionModel;
 
 public class PantallaInicio extends JFrame {
 		
-	//VAMOS A HACER NUESTRO COMMIT
+	//VAMOS A ACTUALIZAR EL REPO LOCAL
 	
 	private JPanel contentPane;
 	private JTable tabla;
