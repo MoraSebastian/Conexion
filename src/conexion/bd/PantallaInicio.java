@@ -22,7 +22,7 @@ import javax.swing.ListSelectionModel;
 
 public class PantallaInicio extends JFrame {
 
-	//HOLA MUNDO CACA wtf
+	
 	
 	private JPanel contentPane;
 	private JTable tabla;
