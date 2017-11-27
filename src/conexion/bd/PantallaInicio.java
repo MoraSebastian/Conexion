@@ -23,7 +23,7 @@ import javax.swing.ListSelectionModel;
 public class PantallaInicio extends JFrame {
 
 	//HOLA MUNDO 
-	
+	// JODER QUE CARAJO
 	private JPanel contentPane;
 	private JTable tabla;
 	ConexionBD conexion= new ConexionBD();
