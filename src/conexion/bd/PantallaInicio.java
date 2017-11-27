@@ -22,6 +22,8 @@ import javax.swing.ListSelectionModel;
 
 public class PantallaInicio extends JFrame {
 
+	//HOLA MUNDO
+	
 	private JPanel contentPane;
 	private JTable tabla;
 	ConexionBD conexion= new ConexionBD();
