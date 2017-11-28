@@ -19,8 +19,7 @@ public class ConexionBD {
     boolean estado = false;
     int puerto = 5432;
     int cantidadDatos =0;
-
-    
+      
     public String getPassword() {
         return password;
     }
@@ -150,9 +149,10 @@ public class ConexionBD {
         
     }
      
-     public GuiaModelo ConsultarCampo(String script,GuiaModelo guia){
+     public GuiaModelo ConsultarCamposGuia(String script){
         Statement codigo = null;
         ResultSet resultados = null;
+        GuiaModelo guia = new GuiaModelo();
         try{
             //Creea estado para traer datos
             codigo = conexion.createStatement();
@@ -178,6 +178,80 @@ public class ConexionBD {
         }
         return guia;
     }
+     public Cliente ConsultarCamposCliente(String script){
+        Statement codigo = null;
+        ResultSet resultados = null;
+        Cliente cliente = new Cliente();
+        try{
+            //Creea estado para traer datos
+            codigo = conexion.createStatement();
+            //Accede a los datos
+            resultados = codigo.executeQuery(script);
+            //Guarda el modelo de la lista que se tiene en la base de datos
+            ResultSetMetaData datos = resultados.getMetaData();    
+            while(resultados.next()){    
+               cliente.setIdentificacion((int) resultados.getObject("identificacion"));
+               cliente.setNombre(String.valueOf(resultados.getObject("nombre")));
+               cliente.setDireccion(String.valueOf(resultados.getObject("direccion")));
+            }
+            codigo.close();
+            resultados.close();
+            conexion.close();
+        }catch(Exception ex){
+            JOptionPane.showMessageDialog(null,ex);
+        }
+        return cliente;
+    }
+        public Empleado ConsultarCamposEmpleado(String script){
+        Statement codigo = null;
+        ResultSet resultados = null;
+        Empleado empleado = new Empleado();
+        try{
+            //Creea estado para traer datos
+            codigo = conexion.createStatement();
+            //Accede a los datos
+            resultados = codigo.executeQuery(script);
+            //Guarda el modelo de la lista que se tiene en la base de datos
+            ResultSetMetaData datos = resultados.getMetaData();
+            
+            while(resultados.next()){    
+               empleado.setIdentificacion((int) resultados.getObject("identificacion"));
+               empleado.setNombre(String.valueOf(resultados.getObject("nombre")));
+            }
+            codigo.close();
+            resultados.close();
+            conexion.close();
+        }catch(Exception ex){
+            JOptionPane.showMessageDialog(null,ex);
+        }
+        return empleado;
+    }
+    public Embalaje ConsultarInfoPaquete(String script){
+        Statement codigo = null;
+        ResultSet resultados = null;
+        Embalaje paquete = new Embalaje();
+        try{
+            //Creea estado para traer datos
+            codigo = conexion.createStatement();
+            //Accede a los datos
+            resultados = codigo.executeQuery(script);
+            //Guarda el modelo de la lista que se tiene en la base de datos
+            ResultSetMetaData datos = resultados.getMetaData();
+            
+            while(resultados.next()){ 
+                 paquete.setPeso((double)resultados.getObject("peso"));
+                
+            }
+            codigo.close();
+            resultados.close();
+            conexion.close();
+        }catch(Exception ex){
+            JOptionPane.showMessageDialog(null,ex);
+        }
+        return paquete;
+    }  
+     
+     
 }
 
 

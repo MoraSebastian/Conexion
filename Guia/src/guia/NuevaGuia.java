@@ -60,6 +60,7 @@ public class NuevaGuia extends javax.swing.JFrame {
 
         jLabel1.setText("ID:");
 
+        ID.setEditable(false);
         ID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 IDActionPerformed(evt);
@@ -127,6 +128,14 @@ public class NuevaGuia extends javax.swing.JFrame {
                         .addGap(101, 101, 101)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel5)
+                                .addGap(37, 37, 37)
+                                .addComponent(id_orden, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(ID, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(id)
                                     .addComponent(jLabel4)
@@ -139,19 +148,11 @@ public class NuevaGuia extends javax.swing.JFrame {
                                     .addComponent(id_empleado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(id_aseguradora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(id_embalaje, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(id_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel5)
-                                .addGap(37, 37, 37)
-                                .addComponent(id_orden, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(ID, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(id_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(162, 162, 162)
+                        .addGap(135, 135, 135)
                         .addComponent(jButton1)))
-                .addContainerGap(181, Short.MAX_VALUE))
+                .addContainerGap(113, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -184,9 +185,9 @@ public class NuevaGuia extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2)
                     .addComponent(id_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                .addGap(31, 31, 31)
                 .addComponent(jButton1)
-                .addGap(29, 29, 29))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         pack();
@@ -214,8 +215,12 @@ public class NuevaGuia extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_id_ordenActionPerformed
 
+    private void id_aseguradoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_id_aseguradoraActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_id_aseguradoraActionPerformed
+
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       
+
         GuiaModelo guia = new GuiaModelo();
         guia.setId(Integer.parseInt(ID.getText()));
         guia.setId_aseguradora((int)(id_aseguradora.getSelectedItem()));
@@ -223,13 +228,9 @@ public class NuevaGuia extends javax.swing.JFrame {
         guia.setId_empleado((int)(id_empleado.getSelectedItem()));
         guia.setId_estadoDelicado((int)(id_delicado.getSelectedItem()));
         guia.setId_embalaje((int)(id_embalaje.getSelectedItem()));
-        guia.setId_aseguradora((int)(id_orden.getSelectedItem()));  
+        guia.setId_aseguradora((int)(id_orden.getSelectedItem()));
         conexion.ingresar(manipulador.insertarBD(guia));
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void id_aseguradoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_id_aseguradoraActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_id_aseguradoraActionPerformed
    
     /**
      * @param args the command line arguments

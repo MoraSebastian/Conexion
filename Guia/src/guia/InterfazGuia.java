@@ -116,7 +116,7 @@ public class InterfazGuia extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void DetallarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DetallarActionPerformed
-       DetalleInterfaz detalle = new DetalleInterfaz();
+       GuiaDetallada detalle = new GuiaDetallada();
        detalle.setVisible(true);
     }//GEN-LAST:event_DetallarActionPerformed
 
@@ -126,7 +126,8 @@ public class InterfazGuia extends javax.swing.JFrame {
     }//GEN-LAST:event_AgregarActionPerformed
 
     private void ModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModificarActionPerformed
-        // TODO add your handling code here:
+        ModificarInterfaz detalle = new ModificarInterfaz();
+       detalle.setVisible(true);
     }//GEN-LAST:event_ModificarActionPerformed
 
     private void ActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ActualizarActionPerformed

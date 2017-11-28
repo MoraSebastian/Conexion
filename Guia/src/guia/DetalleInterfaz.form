@@ -35,16 +35,14 @@
                   <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="empleado" min="-2" pref="93" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="orden" pref="93" max="32767" attributes="0"/>
-                      <Component id="estado" max="32767" attributes="0"/>
-                      <Component id="aseguradora" max="32767" attributes="0"/>
-                      <Component id="jComboBox1" alignment="0" max="32767" attributes="0"/>
-                  </Group>
-                  <Component id="embalaje" min="-2" max="-2" attributes="0"/>
-                  <Component id="cliente" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="empleado" pref="93" max="32767" attributes="0"/>
+                  <Component id="orden" pref="93" max="32767" attributes="0"/>
+                  <Component id="estado" max="32767" attributes="0"/>
+                  <Component id="aseguradora" max="32767" attributes="0"/>
+                  <Component id="jComboBox1" alignment="0" max="32767" attributes="0"/>
+                  <Component id="embalaje" alignment="0" max="32767" attributes="0"/>
+                  <Component id="cliente" alignment="0" max="32767" attributes="0"/>
               </Group>
               <EmptySpace pref="166" max="32767" attributes="0"/>
           </Group>
@@ -130,37 +128,20 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="orden">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jTextField1"/>
-      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ordenActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="empleado">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jTextField2"/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="estado">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jTextField3"/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="aseguradora">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jTextField4"/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JComboBox" name="jComboBox1">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="4">
-            <StringItem index="0" value="Item 1"/>
-            <StringItem index="1" value="Item 2"/>
-            <StringItem index="2" value="Item 3"/>
-            <StringItem index="3" value="Item 4"/>
-          </StringArray>
+          <StringArray count="0"/>
         </Property>
       </Properties>
       <Events>
@@ -171,14 +152,11 @@
       </AuxValues>
     </Component>
     <Component class="javax.swing.JTextField" name="embalaje">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jTextField1"/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="cliente">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jTextField2"/>
-      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="clienteActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

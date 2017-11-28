@@ -54,6 +54,10 @@ public class ManipulandoDatos {
             return consulta;
         
       }
-    
+   public String obtenerRegistroUnico(int id, String tabla) {
+            consulta = "SELECT * FROM " + tabla +  " WHERE id= " + id +";";
+            return consulta;     
+      }
+ 
 
 }

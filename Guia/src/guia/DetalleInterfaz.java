@@ -66,29 +66,23 @@ public class DetalleInterfaz extends javax.swing.JFrame {
 
         jLabel5.setText("Id ordenServicio");
 
-        orden.setText("jTextField1");
         orden.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ordenActionPerformed(evt);
             }
         });
 
-        empleado.setText("jTextField2");
-
-        estado.setText("jTextField3");
-
-        aseguradora.setText("jTextField4");
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox1ActionPerformed(evt);
             }
         });
 
-        embalaje.setText("jTextField1");
-
-        cliente.setText("jTextField2");
+        cliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clienteActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -105,15 +99,14 @@ public class DetalleInterfaz extends javax.swing.JFrame {
                     .addComponent(jLabel2)
                     .addComponent(jLabel3))
                 .addGap(35, 35, 35)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(empleado, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(orden, javax.swing.GroupLayout.DEFAULT_SIZE, 93, Short.MAX_VALUE)
-                        .addComponent(estado)
-                        .addComponent(aseguradora)
-                        .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(embalaje, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(empleado, javax.swing.GroupLayout.DEFAULT_SIZE, 93, Short.MAX_VALUE)
+                    .addComponent(orden, javax.swing.GroupLayout.DEFAULT_SIZE, 93, Short.MAX_VALUE)
+                    .addComponent(estado)
+                    .addComponent(aseguradora)
+                    .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(embalaje)
+                    .addComponent(cliente))
                 .addContainerGap(166, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -160,8 +153,8 @@ public class DetalleInterfaz extends javax.swing.JFrame {
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
        
         GuiaModelo guiaDetalle;
-        guiaDetalle= conexion.ConsultarCampo(manipulador.obtenerRegistroID(
-                (int)jComboBox1.getSelectedItem()), new GuiaModelo());
+        guiaDetalle= conexion.ConsultarCamposGuia(manipulador.obtenerRegistroID(
+                (int)jComboBox1.getSelectedItem()));
                  cliente.setText(String.valueOf(guiaDetalle.id_cliente));
                  empleado.setText(String.valueOf(guiaDetalle.id_empleado));
                  aseguradora.setText(String.valueOf(guiaDetalle.id_aseguradora));
@@ -170,6 +163,10 @@ public class DetalleInterfaz extends javax.swing.JFrame {
                  estado.setText(String.valueOf(guiaDetalle.id_estadoDelicado));
                  
     }//GEN-LAST:event_jComboBox1ActionPerformed
+
+    private void clienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clienteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_clienteActionPerformed
     
     
     /**

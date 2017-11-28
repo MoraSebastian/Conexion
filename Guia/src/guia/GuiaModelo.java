@@ -12,7 +12,7 @@ public class GuiaModelo {
     int id_estadoDelicado;
     int id_embalaje;
     int id_ordenServicio;
-
+  
     public int getId() {
         return id;
     }
